@@ -13,10 +13,12 @@
     "@fontsource/poppins": "^5.0.15",
     "expo": "~51.0.26",
     "expo-status-bar": "~1.12.1",
+    "firebase": "^10.13.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
-    "react-native-web": "~0.19.10"
+    "react-native-web": "~0.19.10",
+    "expo-constants": "~16.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
