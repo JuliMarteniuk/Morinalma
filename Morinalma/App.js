@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import "@fontsource/poppins";
-import AlumnoAdd from './src/modules/alumno/componentes/alumnoAdd';
+import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <Text style={styles.subTitulo}>O si no tiene cuenta <Text style={styles.subTitulo2}>REGISTRESE</Text></Text>
     </View>
     </View>*/
-    <AlumnoAdd></AlumnoAdd>
+    <ProfesorAdd></ProfesorAdd>
   );
 }
 

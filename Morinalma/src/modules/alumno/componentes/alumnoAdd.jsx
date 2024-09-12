@@ -84,12 +84,9 @@ const AlumnoAdd = ({ onAdd }) => {
 
 const styles = StyleSheet.create({
   formulario: {
-    backgroundColor: '#fff',
-    borderBlockColor: '#833dbe',
-    borderWidth: '1.5px',
-    borderRadius: '12px',
-    width: '350px',
-    height:'371px',
+    border: '2px solid #000000', /* Borde de 2 píxeles de grosor, color negro sólido */
+    padding: '20px', /* Espacio interno dentro del borde */
+    margin: '20px', /* Espacio exterior alrededor del formulario */
   },
  });
 

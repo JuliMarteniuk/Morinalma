@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {StyleSheet} from 'react-native'; //esto se importa para poder usar css
 
 const ProfesorAdd = ({ onAdd }) => {
   const [nombre, setNombre] = useState("");
@@ -20,55 +21,141 @@ const ProfesorAdd = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={styles.profesor}>
+      <div style={styles.formulario}>
+        <div style={styles.registro}>
+          <h1>Registrarse</h1>
+        </div>
+      <div style={styles.casilleros}>
       <div>
-        <label>Nombre:</label>
-        <input
-          type="text"
+        <input style={styles.casilla}
+          type="text" 
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
           required
+          placeholder="Nombre"
         />
       </div>
       <div>
-        <label>Apellido:</label>
-        <input
+        <input style={styles.casilla2}
           type="text"
           value={apellido}
           onChange={(e) => setApellido(e.target.value)}
           required
+           placeholder="Apellido"
         />
       </div>
       <div>
-        <label>Email:</label>
-        <input
+        <input style={styles.casilla3}
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+           placeholder="Email"
         />
       </div>
       <div>
-        <label>Teléfono:</label>
-        <input
+        <input style={styles.casilla4}
           type="text"
           value={telefono}
           onChange={(e) => setTelefono(e.target.value)}
           required
+          placeholder="Telefono"
         />
       </div>
       <div> 
-        <label>DNI:</label>
-        <input
+        <input style={styles.casilla5}
           type="text"
           value={dni}
           onChange={(e) => setDni(e.target.value)}
           required
+           placeholder="DNI"
         />
       </div>
-      <button type="submit">Agregar Profesor</button>
+      <button type="submit" style={styles.casilla6}>Agregar Profesor</button>
+      </div>
+      </div>
     </form>
   );
 };
+const styles = StyleSheet.create({
+  profesor: {
+    /*border: '2px solid #000000', /* Borde de 2 píxeles de grosor, color negro sólido */
+    padding: '20px', /* Espacio interno dentro del borde */
+    margin: '20px', /* Espacio exterior alrededor del formulario */
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft:'450px', 
+    borderRadius: 10,
 
-export default ProfesorAddAdd;
+
+  },
+  formulario: {
+    border: '2px solid #833D8E',
+    padding: '20px', /* Espacio interno dentro del borde */
+    margin: '20px', /* Espacio exterior alrededor del formulario */
+    borderRadius: 15,
+    height: '416px',
+    width: '350px',
+  },
+  casilleros: {
+    marginLeft: '40px',
+    marginTop: '10px',
+  },
+  casilla: {
+    borderRadius: 10,
+    /*height: 25,
+    width: 289,*/
+    marginBottom: '25px',
+    height: '30px',
+    width: '289px',
+  },
+  casilla2: {
+    borderRadius: 10,
+    /*height: 25,
+    width: 289,*/
+    marginBottom: '25px',
+    height: '30px',
+    width: '289px',
+  },
+  casilla3: {
+    borderRadius: 10,
+    /*height: 25,
+    width: 289,*/
+    marginBottom: '25px',
+    height: '30px',
+    width: '289px',
+  },
+  casilla4: {
+    borderRadius: 10,
+    /*height: 25,
+    width: 289,*/
+    marginBottom: '25px',
+    height: '30px',
+    width: '289px',
+  },
+  casilla5: {
+    borderRadius: 10,
+    /*height: 25,
+    width: 289,*/
+    marginBottom: '25px',
+    height: '30px',
+    width: '289px',
+  },
+  casilla6: {
+    borderRadius: 10,
+    /*height: 25,
+    width: 289,*/
+    marginBottom: '25px',
+    marginLeft: '60px',
+    backgroundColor: '#833D8E',
+    height: '30px',
+    width: '180px',
+  },
+  registro:{
+    marginTop: '-20px',
+    marginLeft: '100px',
+  },
+ });
+export default ProfesorAdd;
