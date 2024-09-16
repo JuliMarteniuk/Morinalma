@@ -5,19 +5,20 @@ import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
     AppBar: {
-        backgroundColor: 'red',
+        backgroundColor: '#0000',
         paddingTop: Constants.statusBarHeight + 10,
         paddingBottom: 10,
         paddingLeft: 10,
     },
     Text: {
         color: 'blue ',
+        fontWeight:'bold',
     }
 })
 
 const AppBar = () => {
     return (
-        <View style={styles.appBar}> // poreque no me toma el view
+        <View style={styles.AppBar}>
         <Text style={styles.Text} >Morinalma</Text>
         </View>
     )

@@ -23,57 +23,57 @@ const ProfesorAdd = ({ onAdd }) => {
   return (
     <form onSubmit={handleSubmit} style={styles.profesor}>
       <div style={styles.formulario}>
-        <div style={styles.registro}>
-          <h1>Registrarse</h1>
-        </div>
-      <div style={styles.casilleros}>
-      <div>
-        <input style={styles.casilla}
-          type="text" 
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          required
-          placeholder="Nombre"
-        />
-      </div>
-      <div>
-        <input style={styles.casilla2}
-          type="text"
-          value={apellido}
-          onChange={(e) => setApellido(e.target.value)}
-          required
-           placeholder="Apellido"
-        />
-      </div>
-      <div>
-        <input style={styles.casilla3}
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-           placeholder="Email"
-        />
-      </div>
-      <div>
-        <input style={styles.casilla4}
-          type="text"
-          value={telefono}
-          onChange={(e) => setTelefono(e.target.value)}
-          required
-          placeholder="Telefono"
-        />
-      </div>
-      <div> 
-        <input style={styles.casilla5}
-          type="text"
-          value={dni}
-          onChange={(e) => setDni(e.target.value)}
-          required
-           placeholder="DNI"
-        />
-      </div>
-      <button type="submit" style={styles.casilla6}>Agregar Profesor</button>
-      </div>
+          <div style={styles.registro}>
+            <h1>Registrarse</h1>
+          </div>
+          <div style={styles.casilleros}>
+            <div>
+              <input style={styles.casilla}
+                type="text" 
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+                required
+                placeholder="Nombre"
+              />
+            </div>
+            <div>
+              <input style={styles.casilla2}
+                type="text"
+                value={apellido}
+                onChange={(e) => setApellido(e.target.value)}
+                required
+                placeholder="Apellido"
+              />
+            </div>
+            <div>
+              <input style={styles.casilla3}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Email"
+              />
+            </div>
+            <div>
+              <input style={styles.casilla4}
+                type="text"
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
+                required
+                placeholder="Telefono"
+              />
+            </div>
+            <div> 
+              <input style={styles.casilla5}
+                type="text"
+                value={dni}
+                onChange={(e) => setDni(e.target.value)}
+                required
+                placeholder="DNI"
+              />
+            </div>
+            <button type="submit" style={styles.casilla6}>Agregar Profesor</button>
+          </div>
       </div>
     </form>
   );
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     width: '350px',
   },
   casilleros: {
-    marginLeft: '40px',
+    marginLeft: '25px',
     marginTop: '10px',
   },
   casilla: {
@@ -148,14 +148,14 @@ const styles = StyleSheet.create({
     /*height: 25,
     width: 289,*/
     marginBottom: '25px',
-    marginLeft: '60px',
+    marginLeft: '145px',
     backgroundColor: '#833D8E',
-    height: '30px',
-    width: '180px',
+    height: '40px',
+    width: '150px',
   },
   registro:{
     marginTop: '-20px',
-    marginLeft: '100px',
+    marginLeft: '90px',
   },
- });
+});
 export default ProfesorAdd;
