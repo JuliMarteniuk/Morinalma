@@ -1,10 +1,16 @@
 import React from "react";
 import { Text, View } from "react-native";
-import {AppBar} from "./src/components/appBar";
+//import {AppBar} from "./appBar";
+import {InicioSesion} from "../modules/profesor/componentes/InicioSesion";
 
 const Main = () => {
  //Aca voy a ir llamando a todos los archivos asi despues llamo a este a App.js
- <AppBar></AppBar>
+ return(
+    <View>
+        <InicioSesion></InicioSesion>; 
+    </View>
+ )
+ 
 }
 
 export default Main 

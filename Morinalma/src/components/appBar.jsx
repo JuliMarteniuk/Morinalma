@@ -2,6 +2,13 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Constants from 'expo-constants'; 
 
+const AppBar = () => {
+    return (
+        <View style={styles.AppBar}> 
+        <Text style={styles.Text} >Morinalma</Text>
+        </View>
+    )
+}
 
 const styles = StyleSheet.create({
     AppBar: {
@@ -11,17 +18,8 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
     },
     Text: {
-        color: 'blue ',
-        fontWeight:'bold',
+        color: '#fff ',
     }
 })
-
-const AppBar = () => {
-    return (
-        <View style={styles.AppBar}>
-        <Text style={styles.Text} >Morinalma</Text>
-        </View>
-    )
-}
 
 export default AppBar
