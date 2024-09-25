@@ -32,11 +32,11 @@ const Curso = () => {
             <div style={styles.lineas}>
                 <h4>Viernes</h4>
             </div>
-
         </div>    
-        
-    ); 
-};
+    
+    );  
+}
+
 
 const styles = StyleSheet.create({
     container:{
