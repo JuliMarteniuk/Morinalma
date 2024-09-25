@@ -5,19 +5,19 @@ const HomeProfesor = () => {
     return(
 
     <div>
-        <div style={StyleSheet.materia}>
+        <div style={Styles.materia}>
             <h3> 5°1 - Programacion Web</h3>
             <h6> Ver información del curso</h6>
         </div>
-        <div style={StyleSheet.materia}>
+        <div style={Styles.materia}>
             <h3> 5°2 - Programacion Web</h3>
             <h6> Ver información del curso</h6>
         </div>
-        <div style={StyleSheet.materia}>
+        <div style={Styles.materia}>
             <h3> 5°3 - Programacion Web</h3>
             <h6> Ver información del curso</h6>
         </div>
-        <div style={StyleSheet.materia}>
+        <div style={Styles.materia}>
             <h3> 5°4 - Programacion Web</h3>
             <h6> Ver información del curso</h6>
         </div>
@@ -28,7 +28,7 @@ const HomeProfesor = () => {
     );  
 }
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
     materia:{
         borderRadius: '20px',
         with: '374px',

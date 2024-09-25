@@ -5,15 +5,15 @@ const HomePreceptor = () => {
     return(
 
     <div>
-        <div style={StyleSheet.curso}>
+        <div style={Styles.curso}>
             <h3> 4°3 - Turno Vespertino</h3>
             <h6> Ver información del curso</h6>
         </div>
-        <div style={StyleSheet.curso}>
+        <div style={Styles.curso}>
             <h3> 5°3 - Turno Vespertino</h3>
             <h6> Ver información del curso</h6>
         </div>
-        <div style={StyleSheet.curso}>
+        <div style={Styles.curso}>
             <h3> 6°3 - Turno Vespertino</h3>
             <h6> Ver información del curso</h6>
         </div>
@@ -22,7 +22,7 @@ const HomePreceptor = () => {
     );  
 }
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
     curso:{
         borderRadius: '20px',
         with: '374px',
