@@ -35,7 +35,7 @@ const Curso = () => {
 
     </div>    
     
-    ); 
+    );  
 }
 
 const styles = StyleSheet.create({
