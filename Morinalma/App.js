@@ -7,12 +7,13 @@ import { Switch } from 'react-router-native';
 //import {AppBar} from "./src/components/appBar";
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
 //import InicioSesion from './src/modules/profesor/componentes/InicioSesion';
-import Curso from './src/modules/preceptor/componentes/Curso';
+//import Curso from './src/modules/preceptor/componentes/Curso';
+//import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
+import Asistencia from './src/modules/preceptor/componentes/Asistencia';
 
 export default function App() {
   return (
-      //averiguar porque no anda el main ni el appbar
     /*<NativeRouter>
       <Switch></Switch>
       <Route path='/' exact>
@@ -22,9 +23,13 @@ export default function App() {
         <Text>Probando</Text>
       </Route>       
     </NativeRouter>*/
-    <Curso></Curso>
+
+
+    <Asistencia></Asistencia>
+    //<Curso></Curso>
     //<InicioSesion></InicioSesion> 
     //<Main></Main> 
+    //<HomePreceptor></HomePreceptor>
 
     
   );

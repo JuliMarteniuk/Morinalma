@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
-    "@fontsource/poppins": "^5.0.15",
+    "@fontsource/poppins": "^5.1.0",
     "expo": "~51.0.26",
     "expo-constants": "~16.0.2",
     "expo-status-bar": "~1.12.1",
