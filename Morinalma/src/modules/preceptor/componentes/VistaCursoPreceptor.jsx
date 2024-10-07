@@ -11,7 +11,7 @@ const Curso = () => {
             <div style={styles.barraEtiqueta}></div>
             <div style={styles.etiqueta}>
                 <h3>Alumnos</h3>
-                <Text>Añada, edite y elimine alumnos de este curso</Text>  
+                <h6>Añada, edite y elimine alumnos de este curso</h6>  
             </div>
             <div style={styles.barraEtiqueta}></div>
         

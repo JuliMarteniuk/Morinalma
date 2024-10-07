@@ -10,7 +10,8 @@ import { Switch } from 'react-router-native';
 //import Curso from './src/modules/preceptor/componentes/Curso';
 //import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
-import Asistencia from './src/modules/preceptor/componentes/Asistencia';
+//import Asistencia from './src/modules/preceptor/componentes/Asistencia';
+import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 
 export default function App() {
   return (
@@ -25,11 +26,12 @@ export default function App() {
     </NativeRouter>*/
 
 
-    <Asistencia></Asistencia>
+    //<Asistencia></Asistencia>
     //<Curso></Curso>
     //<InicioSesion></InicioSesion> 
     //<Main></Main> 
     //<HomePreceptor></HomePreceptor>
+    <VistaCursoProfesor></VistaCursoProfesor>
 
     
   );
