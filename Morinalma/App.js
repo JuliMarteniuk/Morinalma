@@ -11,6 +11,10 @@ import InicioSesion from './src/components/InicioSesion';
 //import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/Asistencia';
+<<<<<<< HEAD
+=======
+import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
+>>>>>>> 9fe8473da94b4f796fd6cab70b37c25fca721000
 
 export default function App() {
   return (
@@ -30,6 +34,7 @@ export default function App() {
     <InicioSesion></InicioSesion> 
     //<Main></Main> 
     //<HomePreceptor></HomePreceptor>
+    <VistaCursoProfesor></VistaCursoProfesor>
 
     
   );
