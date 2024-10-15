@@ -6,15 +6,14 @@ import { Switch } from 'react-router-native';
 
 //import {AppBar} from "./src/components/appBar";
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
-import InicioSesion from './src/components/InicioSesion';
+//import InicioSesion from './src/components/InicioSesion';
 //import Curso from './src/modules/preceptor/componentes/Curso';
 //import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/Asistencia';
-<<<<<<< HEAD
-=======
-import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
->>>>>>> 9fe8473da94b4f796fd6cab70b37c25fca721000
+import Filtros from './src/modules/administrador/componentes/Filtros';
+
+//import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 
 export default function App() {
   return (
@@ -31,10 +30,11 @@ export default function App() {
 
     //<Asistencia></Asistencia>
     //<Curso></Curso>
-    <InicioSesion></InicioSesion> 
+    //<InicioSesion></InicioSesion> 
     //<Main></Main> 
     //<HomePreceptor></HomePreceptor>
-    <VistaCursoProfesor></VistaCursoProfesor>
+    //<VistaCursoProfesor></VistaCursoProfesor>
+    <Filtros></Filtros>
 
     
   );

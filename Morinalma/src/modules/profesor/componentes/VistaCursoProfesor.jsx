@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {StyleSheet} from 'react-native';
-import { ButtonAdd } from '../../../../assets/icons/plus-circle';
+//import { ButtonAdd } from '../../../../assets/icons/plus-circle';
 const VistaCursoProfesor = () => {
     return(
         <div>
