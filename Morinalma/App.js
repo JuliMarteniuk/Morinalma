@@ -14,8 +14,9 @@ import RootLayout from './app/_layout';
 //import Asistencia from './src/modules/preceptor/componentes/Asistencia';
 //import Filtros from './src/modules/administrador/componentes/Filtros';
 //import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
-
 //import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
+//import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
+import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 
 export default function App() {
   return (
@@ -39,8 +40,9 @@ export default function App() {
     //<Filtros></Filtros>
     //<ProfesorAdd></ProfesorAdd>
     //<HomeProfesor></HomeProfesor>
-    <RootLayout></RootLayout>
-
+    //<RootLayout></RootLayout>
+    //<MenuDesplegable></MenuDesplegable>
+    <NuevaClase></NuevaClase>
 
     
   );

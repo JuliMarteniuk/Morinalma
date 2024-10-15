@@ -38,7 +38,6 @@ const NuevaClase = () => {
         </div>
     );
 }
-export default NuevaClase;
 const Styles = StyleSheet.create({
     materia:{
         borderRadius: '20px',
@@ -58,4 +57,5 @@ const Styles = StyleSheet.create({
         width: '352px',
         height: '441px'
     }
-})
+});
+export default NuevaClase;
