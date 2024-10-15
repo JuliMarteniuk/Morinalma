@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import {StyleSheet} from 'react-native';
 
-const VistaCursoProfesor = () => {
+const NuevaClase = () => {
     return(
         <div>
             <div style={Styles.materia}>
             <h3> Curso - Materia</h3>
             </div>
 
-            <div style={styles.container}> 
-                <div><h3 style={styles.subrrayar}>Nueva Clase</h3></div>
+            <div style={Styles.container}> 
+                <div><h3 style={Styles.subrrayar}>Nueva Clase</h3></div>
 
                 <input type="date" value={Fecha} placeholder="Fecha"/>
 
@@ -38,6 +38,7 @@ const VistaCursoProfesor = () => {
         </div>
     );
 }
+export default NuevaClase;
 const Styles = StyleSheet.create({
     materia:{
         borderRadius: '20px',
@@ -49,7 +50,7 @@ const Styles = StyleSheet.create({
     },
     
     subrrayar:{
-        textDecoration: 'underline'
+        //textDecoration: 'underline'
     },
     container:{
         border: '2px',

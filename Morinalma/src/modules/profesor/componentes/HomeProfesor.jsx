@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import {StyleSheet} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
+import { Router } from "react-router-native";
+import { Button } from "react-native-web";
 
 const HomeProfesor = () => {
     return(
@@ -9,18 +11,22 @@ const HomeProfesor = () => {
                     <div style={Styles.materia}>
                         <h3> 5°1 - Programacion Web</h3>
                         <h6> Ver información del curso</h6>
+                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
                     </div>
                     <div style={Styles.materia}>
                         <h3> 5°2 - Programacion Web</h3>
                         <h6> Ver información del curso</h6>
+                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
                     </div>
                     <div style={Styles.materia}>
                         <h3> 5°3 - Programacion Web</h3>
                         <h6> Ver información del curso</h6>
+                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
                     </div>
                     <div style={Styles.materia}>
                         <h3> 5°4 - Programacion Web</h3>
                         <h6> Ver información del curso</h6>
+                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
                     </div>
                 </div>
             </div>    

@@ -2,7 +2,8 @@
 import { View } from 'react-native';
 import "@fontsource/poppins";
 import {NativeRouter, Route} from "react-router-native";
-import { Switch } from 'react-router-native';
+import { Switch } from 'react-router-native'
+import RootLayout from './app/_layout';
 
 //import {AppBar} from "./src/components/appBar";
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
@@ -12,7 +13,7 @@ import { Switch } from 'react-router-native';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/Asistencia';
 //import Filtros from './src/modules/administrador/componentes/Filtros';
-import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
+//import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
 
 //import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 
@@ -37,7 +38,10 @@ export default function App() {
     //<VistaCursoProfesor></VistaCursoProfesor>
     //<Filtros></Filtros>
     //<ProfesorAdd></ProfesorAdd>
-    <HomeProfesor></HomeProfesor>
+    //<HomeProfesor></HomeProfesor>
+    <RootLayout></RootLayout>
+
+
     
   );
 }
