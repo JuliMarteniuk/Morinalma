@@ -26,6 +26,9 @@ const ProfesorAdd = ({ onAdd }) => {
           <div style={styles.registro}>
             <h1>Registrarse</h1>
           </div>
+          <div style={styles.p}>
+            <p>o si tiene una cuenta <a href="boton" style={styles.boton}>iniciar sesiòn</a></p>
+          </div>
           <div style={styles.casilleros}>
             <div>
               <input style={styles.casilla}
@@ -96,7 +99,7 @@ const styles = StyleSheet.create({
     padding: '20px', /* Espacio interno dentro del borde */
     margin: '20px', /* Espacio exterior alrededor del formulario */
     borderRadius: 15,
-    height: '416px',
+    height: '446px',
     width: '350px',
   },
   casilleros: {
@@ -156,6 +159,14 @@ const styles = StyleSheet.create({
   registro:{
     marginTop: '-20px',
     marginLeft: '90px',
+  },
+  p:{
+    marginBottom: '25px',
+    marginLeft: '60px',
+    color: 'grey',
+  },
+  boton:{
+    color: '#833D8E',
   },
 });
 export default ProfesorAdd;

@@ -11,7 +11,8 @@ import { Switch } from 'react-router-native';
 //import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/Asistencia';
-import Filtros from './src/modules/administrador/componentes/Filtros';
+//import Filtros from './src/modules/administrador/componentes/Filtros';
+import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
 
 //import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 
@@ -34,8 +35,9 @@ export default function App() {
     //<Main></Main> 
     //<HomePreceptor></HomePreceptor>
     //<VistaCursoProfesor></VistaCursoProfesor>
-    <Filtros></Filtros>
-
+    //<Filtros></Filtros>
+    //<ProfesorAdd></ProfesorAdd>
+    <HomeProfesor></HomeProfesor>
     
   );
 }

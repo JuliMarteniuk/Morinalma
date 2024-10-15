@@ -19,6 +19,9 @@ const InicioSesion = ({ onAdd }) => {  //Preguntar que es on Add
             <div style={styles.iniciar}>
                 <h1>Inicio Sesion</h1>
             </div>
+            <div style={styles.p}>
+            <p>o si no tiene una cuenta <a href="boton" style={styles.boton}>Registrarse</a></p>
+          </div>
             <div style={styles.casilleros}>
                 <div>
                     <input style={styles.casilla}
@@ -76,6 +79,7 @@ const styles = StyleSheet.create({
         marginBottom: '40px',
         height: '30px',
         width: '289px',
+        marginTop: '-20px',
     },
     casilla2: {
         borderRadius: 10,
@@ -96,8 +100,17 @@ const styles = StyleSheet.create({
         width: '150px',
     },
     iniciar:{
-        marginTop: '-20px',
+        marginTop: '-10px',
         marginLeft: '90px',
+    },
+    p:{
+        marginBottom: '25px',
+        marginLeft: '60px',
+        color: 'grey',
+        marginBottom: '-20px',
+      },
+    boton:{
+        color: '#833D8E',
     },
 });
 export default InicioSesion;
