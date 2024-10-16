@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {StyleSheet} from 'react-native';
 
-const NuevaClase = () => {
+const NuevaClase = ({ onAdd }) => {
     return(
         <div>
             <div style={Styles.materia}>
