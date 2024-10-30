@@ -18,7 +18,7 @@ import RootLayout from './app/_layout';
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 //import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
-import Editar from './src/modules/preceptor/componentes/editar';
+import Editar from './src/modules/preceptor/componentes/Editar';
 
 export default function App() {
   return (
@@ -46,7 +46,7 @@ export default function App() {
     //<MenuDesplegable></MenuDesplegable>
     //<NuevaClase></NuevaClase>
     //<vistaCursoPreceptor></vistaCursoPreceptor>
-    <Editar></Editar>
+    <Editar />
 
     
   );
