@@ -46,8 +46,8 @@ export default function App() {
     //<MenuDesplegable></MenuDesplegable>
     //<NuevaClase></NuevaClase>
     //<vistaCursoPreceptor></vistaCursoPreceptor>
-    <Editar />
-
+    //<Editar />
+    <RootLayout />
     
   );
 }
