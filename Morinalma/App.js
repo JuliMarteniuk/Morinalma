@@ -6,7 +6,7 @@ import { Switch } from 'react-router-native'
 import RootLayout from './app/_layout';
 
 
-import {AppBar} from "./src/components/appBar";
+//import {AppBar} from "./src/components/appBar";
 import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
 import InicioSesion from './src/components/InicioSesion';
 import Curso from './src/modules/preceptor/componentes/Curso';
@@ -69,13 +69,9 @@ export default function App() {
 
     //<vistaCursoPreceptor></vistaCursoPreceptor>
     //<Editar />
-<<<<<<< HEAD
-    //<RootLayout />
-=======
     <RootLayout />
 
->>>>>>> d07135455d3430defb595c93e1e48d5f638841c4
-    
+
   );
 }
 
