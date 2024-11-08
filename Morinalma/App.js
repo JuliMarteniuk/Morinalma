@@ -9,7 +9,7 @@ import RootLayout from './app/_layout';
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
 //import InicioSesion from './src/components/InicioSesion';
 //import Curso from './src/modules/preceptor/componentes/Curso';
-//import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
+import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/asistencia';
 //import Filtros from './src/modules/administrador/componentes/Filtros';
@@ -18,7 +18,7 @@ import RootLayout from './app/_layout';
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 //import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
-import Editar from './src/modules/preceptor/componentes/Editar';
+//import Editar from './src/modules/preceptor/componentes/Editar';
 
 export default function App() {
   return (
@@ -41,13 +41,13 @@ export default function App() {
     //<VistaCursoProfesor></VistaCursoProfesor>
     //<Filtros></Filtros>
     //<ProfesorAdd></ProfesorAdd>
-    //<HomeProfesor></HomeProfesor>
+    <HomeProfesor></HomeProfesor>
     //<RootLayout></RootLayout>
     //<MenuDesplegable></MenuDesplegable>
     //<NuevaClase></NuevaClase>
     //<vistaCursoPreceptor></vistaCursoPreceptor>
     //<Editar />
-    <RootLayout />
+    //<RootLayout />
     
   );
 }

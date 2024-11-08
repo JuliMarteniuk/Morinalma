@@ -1,36 +1,29 @@
-import React, { useState } from "react";
-import {Pressable, StyleSheet} from 'react-native';
-import { Router } from "react-router-native";
-import { Button } from "react-native-web";
+import React from "react";
+import { View, StyleSheet } from 'react-native';
+import MateriaCard from './MateriaCard';
 
 const HomeProfesor = () => {
-    return(
-        <div style={Styles.HomeProfesor}>
-            <div style={Styles.formulario}>
-                <div style={Styles.casilleros}>
-                    <div style={Styles.materia}>
-                        <h3> 5°1 - Programacion Web</h3>
-                        <h6> Ver información del curso</h6>
-                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 5°2 - Programacion Web</h3>
-                        <h6> Ver información del curso</h6>
-                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 5°3 - Programacion Web</h3>
-                        <h6> Ver información del curso</h6>
-                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 5°4 - Programacion Web</h3>
-                        <h6> Ver información del curso</h6>
-                        <Pressable onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}><p>➡️</p></Pressable>
-                    </div>
-                </div>
-            </div>    
-        </div>
+    const materias = [
+        { grado: "5°1", materia: "Programacion Web" },
+        { grado: "5°2", materia: "Programacion Web" },
+        { grado: "5°3", materia: "Programacion Web" },
+        { grado: "5°4", materia: "Programacion Web" },
+    ];
+
+    return (
+        <View style={Styles.HomeProfesor}>
+            <View style={Styles.formulario}>
+                <View style={Styles.casilleros}>
+                    {materias.map((materia, index) => (
+                        <MateriaCard 
+                            key={index}
+                            grado={materia.grado}
+                            materia={materia.materia}
+                        />
+                    ))}
+                </View>
+            </View>    
+        </View>
     );  
 }
 
