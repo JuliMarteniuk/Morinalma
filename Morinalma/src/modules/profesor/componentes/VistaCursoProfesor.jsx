@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 const VistaCursoProfesor = () => {
     return(
         <div>
-            <div style={Styles.materia}>
+            <div style={styles.materia}>
             <h3> Curso - Materia</h3>
             </div>
             
@@ -35,7 +35,7 @@ const VistaCursoProfesor = () => {
     );  
 }
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
     materia:{
         borderRadius: '20px',
         with: '374px',
