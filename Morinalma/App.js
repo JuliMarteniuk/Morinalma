@@ -7,25 +7,11 @@ import RootLayout from './app/_layout';
 
 
 //import {AppBar} from "./src/components/appBar";
-import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
-import InicioSesion from './src/components/InicioSesion';
-import Curso from './src/modules/preceptor/componentes/Curso';
-import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
-import  Main  from './src/components/Main';
-import Asistencia from './src/modules/preceptor/componentes/asistencia';
-import Filtros from './src/modules/administrador/componentes/Filtros';
-import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
-import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
-import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
-import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
-import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
-//import Editar from './src/modules/preceptor/componentes/editar';
-
-//import {AppBar} from "./src/components/appBar";
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
 //import InicioSesion from './src/components/InicioSesion';
 //import Curso from './src/modules/preceptor/componentes/Curso';
-import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
+//import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
+//import PreceptorAdd from './src/modules/preceptor/componentes/preceptorAdd';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/asistencia';
 //import Filtros from './src/modules/administrador/componentes/Filtros';
@@ -34,7 +20,24 @@ import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 //import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
+//import Editar from './src/modules/preceptor/componentes/editar';
+
+//import {AppBar} from "./src/components/appBar";
+//import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
+//import InicioSesion from './src/components/InicioSesion';
+//import Curso from './src/modules/preceptor/componentes/Curso';
+//import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
+//import  Main  from './src/components/Main';
+//import Asistencia from './src/modules/preceptor/componentes/asistencia';
+import Filtros from './src/modules/administrador/componentes/Filtros';
+//import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
+//import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
+//import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
+//import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
+//import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
 //import Editar from './src/modules/preceptor/componentes/Editar';
+//import administracion from './src/modules/administrador/componentes/administracion';
+//import EditarAdmin from './src/modules/administrador/componentes/EditarAdimin';
 
 
 export default function App() {
@@ -56,20 +59,23 @@ export default function App() {
     //<Main></Main> 
     //<HomePreceptor></HomePreceptor>
     //<VistaCursoProfesor></VistaCursoProfesor>
-    //<Filtros></Filtros>
+    <Filtros></Filtros>
     //<ProfesorAdd></ProfesorAdd>
-    <HomeProfesor></HomeProfesor>
+    //<HomeProfesor></HomeProfesor>
     //<RootLayout></RootLayout>
     //<MenuDesplegable></MenuDesplegable>
     //<NuevaClase></NuevaClase>
+    //<PreceptorAdd></PreceptorAdd>
+    //<administracion></administracion>
+    //<EditarAdmin></EditarAdmin>
 
-    //<VistaCursoPreceptor></VistaCursoPreceptor>
+   // <VistaCursoPreceptor></VistaCursoPreceptor>
     //<Editar></Editar>
 
 
     //<vistaCursoPreceptor></vistaCursoPreceptor>
     //<Editar />
-    <RootLayout />
+    //<RootLayout />
 
 
   );

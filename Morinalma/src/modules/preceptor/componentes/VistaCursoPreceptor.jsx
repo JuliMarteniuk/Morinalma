@@ -1,7 +1,7 @@
 import React from "react";
 import {StyleSheet, Text} from 'react-native';
 
-const Curso = () => {
+const VistaCursoPreceptor = () => {
     return(
 
         <div style={styles.container}>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Curso;
+export default VistaCursoPreceptor;
 
 
 

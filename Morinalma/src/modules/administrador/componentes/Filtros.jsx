@@ -5,9 +5,18 @@ const Filtros = () => {
 
     return(
         <div style={Styles.container}>
-            <div style={Styles.container2}><u style={Styles.titulo}>Filtros</u></div>
-            <div>Turnos</div>
-            <div>Boton Aplicar</div>
+            <div>
+                <h2>Filtros</h2>
+            </div>
+            <div>
+                <h4>Turno Mañana</h4>
+            </div>
+            <div>
+                <h4>Turno Tarde</h4>
+            </div>
+            <div>
+                <h4>Turno Vesperitno</h4>
+            </div>
         </div>
     );
 }
