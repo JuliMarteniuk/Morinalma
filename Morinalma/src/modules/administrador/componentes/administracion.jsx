@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {StyleSheet} from 'react-native';
 //import "@fontsource/poppins";
 
-const administracion = () => {
+const Administracion = () => {
     return(
         <div style={Styles.administracion}>
             <div style={Styles.formulario}>
@@ -70,4 +70,4 @@ const Styles = StyleSheet.create({
 });
 
 
-export default administracion;
+export default Administracion;

@@ -21,6 +21,7 @@ import RootLayout from './app/_layout';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 //import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
 //import Editar from './src/modules/preceptor/componentes/editar';
+import Administracion from './src/modules/administrador/componentes/administracion';
 
 //import {AppBar} from "./src/components/appBar";
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
@@ -29,15 +30,13 @@ import RootLayout from './app/_layout';
 //import HomePreceptor from './src/modules/preceptor/componentes/HomePreceptor';
 //import  Main  from './src/components/Main';
 //import Asistencia from './src/modules/preceptor/componentes/asistencia';
-import Filtros from './src/modules/administrador/componentes/Filtros';
+//import Filtros from './src/modules/administrador/componentes/Filtros';
 //import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
 //import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 //import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
 //import Editar from './src/modules/preceptor/componentes/Editar';
-//import administracion from './src/modules/administrador/componentes/administracion';
-//import EditarAdmin from './src/modules/administrador/componentes/EditarAdimin';
 
 
 export default function App() {
@@ -59,17 +58,16 @@ export default function App() {
     //<Main></Main> 
     //<HomePreceptor></HomePreceptor>
     //<VistaCursoProfesor></VistaCursoProfesor>
-    <Filtros></Filtros>
+    //<Filtros></Filtros>
     //<ProfesorAdd></ProfesorAdd>
     //<HomeProfesor></HomeProfesor>
     //<RootLayout></RootLayout>
     //<MenuDesplegable></MenuDesplegable>
     //<NuevaClase></NuevaClase>
     //<PreceptorAdd></PreceptorAdd>
-    //<administracion></administracion>
-    //<EditarAdmin></EditarAdmin>
+    <Administracion></Administracion>
 
-   // <VistaCursoPreceptor></VistaCursoPreceptor>
+    //<VistaCursoPreceptor></VistaCursoPreceptor>
     //<Editar></Editar>
 
 
