@@ -1,114 +1,153 @@
 import React, { useState } from "react";
 import { StyleSheet } from 'react-native';
 
-
 const Editar = ({ onAdd }) => {
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
+  const [formData, setFormData] = useState({
+    nombre: "",
+    apellido: "",
+    curso: "",
+    turno: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const nuevoPreceptor = { nombre, apellido };
-    onAdd(nuevoPreceptor);
-    setNombre("");
-    setApellido("");
+    onAdd(formData);
+    setFormData({
+      nombre: "",
+      apellido: "",
+      curso: "",
+      turno: ""
+    });
+  };
+
+  const handleCancel = () => {
+    setFormData({
+      nombre: "",
+      apellido: "",
+      curso: "",
+      turno: ""
+    });
   };
 
   return (
     <form onSubmit={handleSubmit} style={styles.preceptor}>
       <div style={styles.formulario}>
         <div style={styles.casilleros}>
-          <div>
-            <input style={styles.casilla}
-              type="text"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-              placeholder="Nombre"
-            />
-          </div>
-          <div>
-            <input style={styles.casilla2}
-              type="text"
-              value={apellido}
-              onChange={(e) => setApellido(e.target.value)}
-              required
-              placeholder="Apellido"
-            />
-          </div>
-          <div>
-            <label for="unidad">Curso</label>
-            <select name="Curso" id="Curso">
-              <option>Elija el curso</option>
-              <option value="u1">1°1</option>
-              <option value="u2">1°2</option>
-              <option value="u3">1°3</option>
-              <option value="u4">1°4</option>
-              <option value="u5">1°5</option>
-              <option value="u6">1°6</option>
-              <option value="u7">1°7</option>
-              <option value="u8">2°1</option>
-              <option value="u9">2°2</option>
-              <option value="u10">2°3</option>
-              <option value="u11">2°4</option>
-              <option value="u12">2°5</option>
-              <option value="u13">2°6</option>
-              <option value="u14">3°1</option>
-              <option value="u15">3°2</option>
-              <option value="u16">3°3</option>
-              <option value="u17">3°4</option>
-              <option value="u18">3°5</option>
-              <option value="u19">3°6</option>
-              <option value="u20">4°1</option>
-              <option value="u21">4°2</option>
-              <option value="u22">4°3</option>
-              <option value="u23">4°4</option>
-              <option value="u24">4°5</option>
-              <option value="u25">5°1</option>
-              <option value="u26">5°2</option>
-              <option value="u27">5°3</option>
-              <option value="u28">5°4</option>
-              <option value="u29">6°1</option>
-              <option value="u30">6°2</option>
-              <option value="u31">6°3</option>
-              <option value="u32">6°4</option>
-            </select>
-          </div>
-          <div>
-            <label for="unidad">Turno</label>
-            <select name="Turno" id="Turno">
-              <option>Elija el turno</option>
-              <option value="t1">Turno Mañana</option>
-              <option value="t2">Turno Tarde</option>
-              <option value="t3">Turno Vespertino</option>
-            </select>
-          </div>
+          <InputField
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            placeholder="Nombre"
+          />
+          <InputField
+            name="apellido"
+            value={formData.apellido}
+            onChange={handleChange}
+            placeholder="Apellido"
+          />
+          <SelectField
+            label="Curso"
+            name="curso"
+            value={formData.curso}
+            onChange={handleChange}
+            options={getCursosOptions()}
+          />
+          <SelectField
+            label="Turno"
+            name="turno"
+            value={formData.turno}
+            onChange={handleChange}
+            options={getTurnosOptions()}
+          />
           <div style={styles.caja}>
-            <button type="submit" style={styles.casilla}>Cancelar</button>
-            <button type="submit" style={styles.casilla}>Guardar</button>
+            <button type="button" style={styles.casilla} onClick={handleCancel}>
+              Cancelar
+            </button>
+            <button type="submit" style={styles.casilla}>
+              Guardar
+            </button>
           </div>
         </div>
       </div>
     </form>
   );
 };
+
+const InputField = ({ name, value, onChange, placeholder }) => (
+  <div>
+    <input
+      style={styles.casilla}
+      type="text"
+      name={name}
+      value={value}
+      onChange={onChange}
+      required
+      placeholder={placeholder}
+    />
+  </div>
+);
+
+const SelectField = ({ label, name, value, onChange, options }) => (
+  <div>
+    <label htmlFor={name}>{label}</label>
+    <select
+      name={name}
+      id={name}
+      value={value}
+      onChange={onChange}
+    >
+      <option value="">Elija el {label.toLowerCase()}</option>
+      {options.map(({ value, label }) => (
+        <option key={value} value={value}>
+          {label}
+        </option>
+      ))}
+    </select>
+  </div>
+);
+
+const getCursosOptions = () => {
+  const años = [1, 2, 3, 4, 5, 6];
+  const divisiones = años.map(año => 
+    año <= 3 ? 6 : año <= 4 ? 5 : año <= 5 ? 4 : 4
+  );
+  
+  return años.flatMap((año, i) => 
+    Array.from({ length: divisiones[i] }, (_, j) => ({
+      value: `u${año}${j + 1}`,
+      label: `${año}°${j + 1}`
+    }))
+  );
+};
+
+const getTurnosOptions = () => [
+  { value: 't1', label: 'Turno Mañana' },
+  { value: 't2', label: 'Turno Tarde' },
+  { value: 't3', label: 'Turno Vespertino' }
+];
+
 const styles = StyleSheet.create({
   preceptor: {
-    /*border: '2px solid #000000', /* Borde de 2 píxeles de grosor, color negro sólido */
-    padding: '20px', /* Espacio interno dentro del borde */
-    margin: '20px', /* Espacio exterior alrededor del formulario */
+    padding: '20px',
+    margin: '20px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: '450px',
     borderRadius: 10,
-
-
   },
   formulario: {
     border: '2px solid #833D8E',
-    padding: '20px', /* Espacio interno dentro del borde */
-    margin: '20px', /* Espacio exterior alrededor del formulario */
+    padding: '20px',
+    margin: '20px',
     borderRadius: 15,
     height: '446px',
     width: '350px',
@@ -119,19 +158,10 @@ const styles = StyleSheet.create({
   },
   casilla: {
     borderRadius: 10,
-    /*height: 25,
-    width: 289,*/
     marginBottom: '25px',
     height: '30px',
     width: '289px',
-  },
-  casilla2: {
-    borderRadius: 10,
-    /*height: 25,
-    width: 289,*/
-    marginBottom: '25px',
-    height: '30px',
-    width: '289px',
-  },
+  }
 });
+
 export default Editar;

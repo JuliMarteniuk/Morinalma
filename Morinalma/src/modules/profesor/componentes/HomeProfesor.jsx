@@ -4,69 +4,52 @@ import MateriaCard from './MateriaCard';
 
 const HomeProfesor = () => {
     const materias = [
-        { grado: "5°1", materia: "Programacion Web" },
-        { grado: "5°2", materia: "Programacion Web" },
-        { grado: "5°3", materia: "Programacion Web" },
-        { grado: "5°4", materia: "Programacion Web" },
+        { id: 1, grado: "5°1", materia: "Programacion Web", turno: "Mañana" },
+        { id: 2, grado: "5°2", materia: "Programacion Web", turno: "Tarde" },
+        { id: 3, grado: "5°3", materia: "Programacion Web", turno: "Tarde" },
+        { id: 4, grado: "5°4", materia: "Programacion Web", turno: "Vespertino" },
     ];
 
     return (
-        <View style={Styles.HomeProfesor}>
-            <View style={Styles.formulario}>
-                <View style={Styles.casilleros}>
-                    {materias.map((materia, index) => (
+        <View style={styles.container}>
+            <View style={styles.content}>
+                <View style={styles.materiasGrid}>
+                    {materias.map((materia) => (
                         <MateriaCard 
-                            key={index}
-                            grado={materia.grado}
-                            materia={materia.materia}
+                            key={materia.id}
+                            {...materia}
+                            onClick={() => handleMateriaClick(materia)}
                         />
                     ))}
                 </View>
             </View>    
         </View>
     );  
-}
+};
 
-const Styles = StyleSheet.create({
-    materia:{
-       //fontFamily: 'Poppins',
-       display:'flex',
-       borderRadius: '20px',
-       with: '374px',
-       heigth: '96px',
-       backgroundColor: '#f6edfa',
-       color: '#000000',
-       border: '2px solid #833D8E',
-       //justifyContent:'center',
-       alignItems:'center',
-       margin:'20px',
-       marginBottom: '40px',
-    },
-    formulario: {
-        //border: '2px solid #833D8E',
-        padding: '20px', /* Espacio interno dentro del borde */
-        margin: '20px', /* Espacio exterior alrededor del formulario */
-        borderRadius: 15,
-        height: '446px',
-        width: '397px',
-    },
-    HomeProfesor: {
-        /*border: '2px solid #000000', /* Borde de 2 píxeles de grosor, color negro sólido */
-        padding: '20px', /* Espacio interno dentro del borde */
-        margin: '20px', /* Espacio exterior alrededor del formulario */
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 20,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft:'450px', 
+        marginLeft: 400,
         borderRadius: 10,
-        marginLeft: '400px',
     },
-    casilleros:{
-        marginLeft: '15px',
-        marginTop: '40px',
+    content: {
+        width: 397,
+        height: 446,
+        padding: 20,
+        margin: 20,
+        borderRadius: 15,
+        backgroundColor: '#ffffff',
     },
-
+    materiasGrid: {
+        marginLeft: 15,
+        marginTop: 40,
+        gap: 20,
+    }
 });
-
 
 export default HomeProfesor;

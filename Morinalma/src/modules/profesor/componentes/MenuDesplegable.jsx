@@ -1,83 +1,102 @@
-import React, { useState } from "react";
-import {StyleSheet} from 'react-native';
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const MenuDesplegable = () => {
-    return(
-        <div style={Styles.HomeProfesor}>
-            <div style={Styles.formulario}>
-                <div style={Styles.casilleros}>
-                    <div style={Styles.materia}>
-                        <h3> 6°3 - Computacion Grafica</h3>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 6°3 - Sistema Operativo</h3>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 6°3 - Tecnologia de Redes</h3>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 6°3 - Ingles Tecnico</h3>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 6°3 - Organizacion y Arquitectura</h3>
-                    </div>
-                    <div style={Styles.materia}>
-                        <h3> 6°3 - Programacion Web Dinamica</h3>
-                    </div>
-                    <button type="submit" style={Styles.CerrarSesion}>Cerrar Sesión</button>
-                </div>
-            </div>    
-        </div>
+const MenuDesplegable = ({ onLogout }) => {
+    const materias = [
+        { id: 1, nombre: "Computacion Grafica", curso: "6°3" },
+        { id: 2, nombre: "Sistema Operativo", curso: "6°3" },
+        { id: 3, nombre: "Tecnologia de Redes", curso: "6°3" },
+        { id: 4, nombre: "Ingles Tecnico", curso: "6°3" },
+        { id: 5, nombre: "Organizacion y Arquitectura", curso: "6°3" },
+        { id: 6, nombre: "Programacion Web Dinamica", curso: "6°3" },
+    ];
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.content}>
+                <View style={styles.materiasContainer}>
+                    {materias.map((materia) => (
+                        <MateriaItem 
+                            key={materia.id}
+                            curso={materia.curso}
+                            nombre={materia.nombre}
+                        />
+                    ))}
+                    <TouchableOpacity 
+                        style={styles.logoutButton}
+                        onPress={onLogout}
+                    >
+                        <Text style={styles.logoutText}>Cerrar Sesión</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>    
+        </View>
     );
-}
-const Styles = StyleSheet.create({
-    materia:{
-       //fontFamily: 'Poppins',
-       display:'flex',
-       borderRadius: '20px',
-       with: '174px',
-       heigth: '26px',
-       backgroundColor: '#f6edfa',
-       color: '#000000',
-       border: '2px solid #833D8E',
-       //justifyContent:'center',
-       alignItems:'center',
-       margin:'20px',
-       marginBottom: '10px',
-    },
-    CerrarSesion:{
-        borderRadius: '20px',
-        marginBottom: '25px',
-        marginLeft: '145px',
-        backgroundColor: '#833D8E',
-        height: '56px',
-        width: '334px',
-        marginLeft: '10px',
-        marginBottom: '40px',
-    },
-    formulario: {
-        //border: '2px solid #833D8E',
-        padding: '20px', /* Espacio interno dentro del borde */
-        margin: '20px', /* Espacio exterior alrededor del formulario */
-        borderRadius: 15,
-        height: '446px',
-        width: '397px',
-    },
-    HomeProfesor: {
-        /*border: '2px solid #000000', /* Borde de 2 píxeles de grosor, color negro sólido */
-        padding: '20px', /* Espacio interno dentro del borde */
-        margin: '20px', /* Espacio exterior alrededor del formulario */
+};
+
+const MateriaItem = ({ curso, nombre }) => (
+    <TouchableOpacity style={styles.materiaItem}>
+        <Text style={styles.materiaText}>
+            {curso} - {nombre}
+        </Text>
+    </TouchableOpacity>
+);
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 20,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft:'450px', 
+        marginLeft: 400,
         borderRadius: 10,
-        marginLeft: '400px',
     },
-    casilleros:{
-        marginLeft: '15px',
-        marginTop: '-80px',
+    content: {
+        width: 397,
+        height: 446,
+        padding: 20,
+        margin: 20,
+        borderRadius: 15,
     },
-
+    materiasContainer: {
+        marginLeft: 15,
+        marginTop: -80,
+    },
+    materiaItem: {
+        display: 'flex',
+        borderRadius: 20,
+        width: 174,
+        height: 26,
+        backgroundColor: '#f6edfa',
+        borderWidth: 2,
+        borderColor: '#833D8E',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 20,
+        marginBottom: 10,
+        padding: 5,
+    },
+    materiaText: {
+        color: '#000000',
+        fontSize: 14,
+        fontWeight: '500',
+    },
+    logoutButton: {
+        borderRadius: 20,
+        backgroundColor: '#833D8E',
+        height: 56,
+        width: 334,
+        marginLeft: 10,
+        marginBottom: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    logoutText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: 'bold',
+    }
 });
+
 export default MenuDesplegable;

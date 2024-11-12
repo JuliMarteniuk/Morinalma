@@ -1,45 +1,45 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
-import { Router } from "react-router-native";
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const MateriaCard = ({ grado, materia }) => {
+const MateriaCard = ({ grado, materia, turno, onClick }) => {
     return (
-        <View style={Styles.materia}>
-            <Text style={Styles.titulo}>{grado} - {materia}</Text>
-            <Text style={Styles.subtitulo}>Ver información del curso</Text>
-            <Pressable 
-                onPress={() => Router.push("./src/modules/profesor/componentes/VistaCursoProfesor.jsx")}
-            >
-                <Text style={Styles.flecha}>➡️</Text>
-            </Pressable>
-        </View>
+        <TouchableOpacity onPress={onClick}>
+            <View style={styles.card}>
+                <Text style={styles.gradoText}>{grado}</Text>
+                <Text style={styles.materiaText}>{materia}</Text>
+                <Text style={styles.turnoText}>{turno}</Text>
+            </View>
+        </TouchableOpacity>
     );
 };
 
-const Styles = StyleSheet.create({
-    materia: {
-        display: 'flex',
+const styles = StyleSheet.create({
+    card: {
+        backgroundColor: '#f6edfa',
         borderRadius: 20,
         width: 374,
         height: 96,
-        backgroundColor: '#f6edfa',
+        padding: 15,
         borderWidth: 2,
         borderColor: '#833D8E',
         alignItems: 'center',
-        margin: 20,
-        marginBottom: 40,
+        justifyContent: 'center',
+        marginBottom: 20,
     },
-    titulo: {
+    gradoText: {
         fontSize: 18,
         fontWeight: 'bold',
         color: '#000000',
+        marginBottom: 5,
     },
-    subtitulo: {
-        fontSize: 14,
+    materiaText: {
+        fontSize: 16,
         color: '#000000',
+        marginBottom: 5,
     },
-    flecha: {
-        fontSize: 20,
+    turnoText: {
+        fontSize: 14,
+        color: '#666666',
     }
 });
 
