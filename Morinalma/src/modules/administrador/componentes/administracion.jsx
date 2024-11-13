@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 // import "@fontsource/poppins";
 
 const Administracion = () => {
+<<<<<<< HEAD
     return (
         <View style={styles.administracion}>
             <View style={styles.formulario}>
@@ -15,6 +16,33 @@ const Administracion = () => {
             </View>
         </View>
     );
+=======
+    return(
+        <div style={Styles.administracion}>
+            <div style={Styles.formulario}>
+                <div style={Styles.casilleros}>
+                    <div style={Styles.curso}>
+                        <h3> Preceptores</h3><br />
+                        <h6> Añade, edite o elimine Preceptores</h6>
+                    </div>
+                    <div style={Styles.curso}>
+                        <h3> Profesores</h3>
+                        <h6>Añade, edite o elimine Profesores</h6>
+                    </div>
+                    <div style={Styles.curso}>
+                        <h3>Alumnos</h3>
+                        <h6>Añade, edite o elimine alumnos</h6>
+                    </div>
+                    <div style={Styles.curso}>
+                        <h3>Cursos</h3>
+                        <h6>Añade, edite o elimine cursos</h6>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    
+    );  
+>>>>>>> a9084cfea804fa421dfcd446d5a276d760fd7478
 }
 
 const Curso = ({ title, description }) => (
@@ -70,4 +98,8 @@ const styles = StyleSheet.create({
     },
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9084cfea804fa421dfcd446d5a276d760fd7478
 export default Administracion;
