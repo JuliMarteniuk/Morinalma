@@ -1,22 +1,8 @@
-import React from "react";
-import { StyleSheet, View, Text } from 'react-native';
-// import "@fontsource/poppins";
+import React, { useState } from "react";
+import {StyleSheet} from 'react-native';
+//import "@fontsource/poppins";
 
 const Administracion = () => {
-<<<<<<< HEAD
-    return (
-        <View style={styles.administracion}>
-            <View style={styles.formulario}>
-                <View style={styles.casilleros}>
-                    <Curso title="Preceptores" description="Añade, edite o elimine Preceptores" />
-                    <Curso title="Profesores" description="Añade, edite o elimine Profesores" />
-                    <Curso title="Alumnos" description="Añade, edite o elimine alumnos" />
-                    <Curso title="Cursos" description="Añade, edite o elimine cursos" />
-                </View>
-            </View>
-        </View>
-    );
-=======
     return(
         <div style={Styles.administracion}>
             <div style={Styles.formulario}>
@@ -42,64 +28,46 @@ const Administracion = () => {
         </div>
     
     );  
->>>>>>> a9084cfea804fa421dfcd446d5a276d760fd7478
 }
 
-const Curso = ({ title, description }) => (
-    <View style={styles.curso}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
-    </View>
-);
-
-const styles = StyleSheet.create({
-    curso: {
-        // fontFamily: 'Poppins',
-        display: 'flex',
-        borderRadius: 20,
-        width: 374,
-        height: 96,
+const Styles = StyleSheet.create({
+    curso:{
+        //fontFamily: 'Poppins',
+        display:'flex',
+        borderRadius: '20px',
+        with: '374px',
+        heigth: '96px',
         backgroundColor: '#f6edfa',
         color: '#000000',
-        borderWidth: 2,
-        borderColor: '#833D8E',
-        // justifyContent: 'center',
-        alignItems: 'center',
-        margin: 20,
-    },
-    title: {
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-    description: {
-        fontSize: 14,
+        border: '2px solid #833D8E',
+        //justifyContent:'center',
+        alignItems:'center',
+        margin:'20px',
     },
     formulario: {
-        // border: '2px solid #833D8E',
-        padding: 20,
-        margin: 20,
+        //border: '2px solid #833D8E',
+        padding: '20px', /* Espacio interno dentro del borde */
+        margin: '20px', /* Espacio exterior alrededor del formulario */
         borderRadius: 15,
-        height: 446,
-        width: 397,
+        height: '446px',
+        width: '397px',
     },
     administracion: {
-        // border: '2px solid #000000',
-        padding: 20,
-        margin: 20,
+        /*border: '2px solid #000000', / Borde de 2 píxeles de grosor, color negro sólido */
+        padding: '20px', /* Espacio interno dentro del borde */
+        margin: '20px', /* Espacio exterior alrededor del formulario */
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 400,
+        marginLeft:'450px', 
         borderRadius: 10,
+        marginLeft: '400px',
     },
-    casilleros: {
-        marginLeft: 15,
-        marginTop: 40,
+    casilleros:{
+        marginLeft: '15px',
+        marginTop: '40px',
     },
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a9084cfea804fa421dfcd446d5a276d760fd7478
 export default Administracion;
