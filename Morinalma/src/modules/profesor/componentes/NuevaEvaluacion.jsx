@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const NuevaClase = ({ onAdd, onBack }) => {
+const NuevaEvaluacion = ({ onAdd, onBack }) => {
     const [fecha, setFecha] = useState('');
-    const [unidad, setUnidad] = useState('');
     const [temas, setTemas] = useState('');
-    const [observaciones, setObservaciones] = useState('');
 
     return (
         <View style={styles.mainContainer}>
+            {/* Barra superior con iconos */}
             <View style={styles.topBar}>
                 <TouchableOpacity>
                     <Icon name="arrow-back" size={24} color="#833D8E" />
@@ -19,26 +18,16 @@ const NuevaClase = ({ onAdd, onBack }) => {
                 </TouchableOpacity>
             </View>
 
+            {/* Tarjeta del título */}
             <View style={styles.headerContainer}>
                 <View style={styles.purpleCard}>
                     <Text style={styles.headerText}>5°3 - Programación Web</Text>
                 </View>
             </View>
 
+            {/* Formulario */}
             <View style={styles.formCard}>
-                <Text style={styles.title}>Nueva Clase</Text>
-
-                <View style={styles.inputRow}>
-                    <TouchableOpacity style={styles.dropdown}>
-                        <Text style={styles.dropdownText}>Fecha</Text>
-                        <Icon name="arrow-drop-down" size={24} color="#000" />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.dropdown}>
-                        <Text style={styles.dropdownText}>Unidad</Text>
-                        <Icon name="arrow-drop-down" size={24} color="#000" />
-                    </TouchableOpacity>
-                </View>
+                <Text style={styles.title}>Nueva Evaluación</Text>
 
                 <TextInput
                     style={styles.input}
@@ -47,14 +36,10 @@ const NuevaClase = ({ onAdd, onBack }) => {
                     onChangeText={setTemas}
                 />
 
-                <TextInput
-                    style={styles.textArea}
-                    placeholder="Observaciones:"
-                    multiline={true}
-                    numberOfLines={4}
-                    value={observaciones}
-                    onChangeText={setObservaciones}
-                />
+                <TouchableOpacity style={styles.dropdown}>
+                    <Text style={styles.dropdownText}>Fecha</Text>
+                    <Icon name="arrow-drop-down" size={24} color="#000" />
+                </TouchableOpacity>
 
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.cancelButton}>
@@ -75,10 +60,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFFFFF',
     },
+    topBar: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 16,
+        paddingHorizontal: 20,
+    },
     headerContainer: {
         paddingHorizontal: 20,
         paddingVertical: 10,
-        marginBottom: 30,
+        marginBottom: 40,
     },
     purpleCard: {
         backgroundColor: '#F8E8FF',
@@ -93,101 +84,66 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#000000',
     },
-    topBar: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 16,
-        paddingHorizontal: 20,
-        backgroundColor: '#FFFFFF',
-    },
-    headerIcon: {
-        padding: 8,
-    },
     formCard: {
-        margin: 20,
         padding: 20,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        alignSelf: 'center',
-        width: '90%',
-        maxWidth: 400,
-        marginTop: 10,
     },
     title: {
-        fontSize: 16,
-        color: '#833D8E',
+        fontSize: 18,
+        fontWeight: 'bold',
         marginBottom: 20,
-        textAlign: 'center',
-    },
-    inputRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        gap: 10,
-        marginBottom: 15,
-    },
-    dropdown: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 8,
-        borderWidth: 1,
-        borderColor: '#E0E0E0',
-        borderRadius: 5,
-        backgroundColor: '#FFFFFF',
-    },
-    dropdownText: {
-        color: '#666666',
     },
     input: {
         borderWidth: 1,
-        borderColor: '#E0E0E0',
+        borderColor: '#833D8E',
         borderRadius: 5,
-        padding: 8,
-        marginBottom: 15,
-    },
-    textArea: {
-        borderWidth: 1,
-        borderColor: '#E0E0E0',
-        borderRadius: 5,
-        padding: 8,
-        height: 100,
-        textAlignVertical: 'top',
+        padding: 10,
         marginBottom: 20,
+    },
+    dropdown: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#833D8E',
+        borderRadius: 5,
+        padding: 10,
+        marginBottom: 20,
+    },
+    dropdownText: {
+        fontSize: 16,
+        color: '#000000',
     },
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        gap: 10,
+        marginTop: 20,
     },
     cancelButton: {
-        flex: 1,
-        backgroundColor: '#F8E8FF',
-        padding: 12,
-        borderRadius: 5,
-        alignItems: 'center',
-    },
-    saveButton: {
-        flex: 1,
         backgroundColor: '#833D8E',
-        padding: 12,
+        padding: 10,
         borderRadius: 5,
-        alignItems: 'center',
+        flex: 1,
+        marginRight: 10,
     },
     cancelButtonText: {
-        color: '#833D8E',
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#FFFFFF',
+        textAlign: 'center',
+    },
+    saveButton: {
+        backgroundColor: '#833D8E',
+        padding: 10,
+        borderRadius: 5,
+        flex: 1,
+        marginLeft: 10,
     },
     saveButtonText: {
+        fontSize: 16,
+        fontWeight: 'bold',
         color: '#FFFFFF',
-    }
+        textAlign: 'center',
+    },
 });
 
-export default NuevaClase;
+export default NuevaEvaluacion;
