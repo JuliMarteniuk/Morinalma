@@ -1,140 +1,155 @@
 import React, { useState } from "react";
 import { StyleSheet } from 'react-native';
 
-const Asistencia = ({ onAdd }) => {
-  const [asistencia, setAsistencia] = useState({});
-
-  const handleCheckboxChange = (persona) => {
-    setAsistencia((prevState) => ({
-      ...prevState,
-      [persona]: !prevState[persona],
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAdd(asistencia);
-    setAsistencia({});
-  };
-
+const Asistencia = () => {
   return (
-    <form onSubmit={handleSubmit} style={styles.asistencia}>
-      <div style={styles.formulario}>
-        <div style={styles.planilla}>
-          <h2><u>Planilla de asistencia</u></h2>
+    <div style={styles.pageContainer}>
+      <div style={styles.header}>
+        <button style={styles.backButton}>←</button>
+        <div style={styles.headerBar}>
+          <div style={styles.purpleBar}></div>
+          <span style={styles.headerTitle}>1°3 - Asistencia</span>
         </div>
-        <div>
-          <select name="fecha" id="fecha" style={styles.fecha}>
-            <option>Fecha</option>
-            {/* Preguntar como linkear la fecha automaticamente */}
-          </select>
-        </div>
-        <div style={styles.container}>
-          <div style={styles.x}>
-            <h3><u>Asistencia</u></h3>
-          </div>
-          {Array.from({ length: 12 }, (_, i) => (
-            <PersonaCheckbox
-              key={i}
-              persona={`Persona ${i + 1}`}
-              checked={!!asistencia[`Persona ${i + 1}`]}
-              onChange={() => handleCheckboxChange(`Persona ${i + 1}`)}
-            />
+        <button style={styles.menuButton}>≡</button>
+      </div>
+
+      <div style={styles.content}>
+        <h2 style={styles.title}>Planilla de Asistencia</h2>
+        
+        <select style={styles.select}>
+          <option>Fecha</option>
+        </select>
+
+        <h3 style={styles.asistenciaTitle}>Asistencia</h3>
+        
+        <div style={styles.listContainer}>
+          {Array.from({ length: 10 }, (_, i) => (
+            <div key={i} style={styles.row}>
+              <span style={styles.name}>Julio Menteniuk</span>
+              <input type="checkbox" style={styles.checkbox} />
+            </div>
           ))}
         </div>
-        <div style={styles.caja}>
-          <button type="button" style={styles.casilla6} onClick={() => setAsistencia({})}>Cancelar</button>
-          <button type="submit" style={styles.casilla7}>Guardar</button>
+
+        <div style={styles.buttonContainer}>
+          <button style={styles.cancelButton}>Cancelar</button>
+          <button style={styles.guardarButton}>Guardar</button>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 
-const PersonaCheckbox = ({ persona, checked, onChange }) => (
-  <div>
-    <label>{persona}</label>
-    <input
-      type="checkbox"
-      style={styles.checkbox}
-      checked={checked}
-      onChange={onChange}
-    />
-  </div>
-);
-
 const styles = StyleSheet.create({
-  asistencia: {
-    padding: '20px',
-    margin: '20px',
+  pageContainer: {
+    minHeight: '100vh',
+    width: '100vw',
+    backgroundColor: '#fff',
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  header: {
+    display: 'flex',
     alignItems: 'center',
-    marginLeft: '450px',
-    borderRadius: 10,
+    padding: '10px 20px',
+    backgroundColor: '#F8F0FA',
+    width: '100%',
   },
-  formulario: {
-    border: '2px solid #833D8E',
+  headerBar: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    flex: 1,
+    marginLeft: '10px',
+  },
+  purpleBar: {
+    width: '4px',
+    height: '20px',
+    backgroundColor: '#833D8E',
+    borderRadius: '2px',
+  },
+  backButton: {
+    border: 'none',
+    background: 'none',
+    fontSize: '20px',
+    cursor: 'pointer',
+  },
+  menuButton: {
+    border: 'none',
+    background: 'none',
+    fontSize: '24px',
+    cursor: 'pointer',
+  },
+  headerTitle: {
+    fontSize: '16px',
+  },
+  content: {
+    flex: 1,
     padding: '20px',
-    margin: '20px',
-    borderRadius: 15,
-    height: '446px',
-    width: '350px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
   },
-  planilla: {
-    marginTop: '-20px',
-    marginLeft: '80px',
+  title: {
     color: '#833D8E',
+    fontSize: '20px',
+    margin: 0,
   },
-  fecha: {
-    display: 'flex',
-    borderRadius: '20px',
-    width: '374px',
-    height: '96px',
-    backgroundColor: '#f6edfa',
-    color: '#000000',
-    border: '2px solid #833D8E',
-    alignItems: 'center',
-    margin: '20px',
+  select: {
+    width: '100%',
+    padding: '10px',
+    borderRadius: '5px',
+    border: '1px solid #ddd',
   },
-  x: {
-    padding: '20px',
-    margin: '20px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: '30px',
-    borderRadius: 10,
+  asistenciaTitle: {
     color: '#833D8E',
-    marginTop: '-50px',
+    fontSize: '18px',
+    margin: 0,
   },
-  container: {
-    border: '2px solid #833D8E',
-    padding: '20px',
-    margin: '20px',
-    borderRadius: 15,
-    height: '246px',
-    width: '270px',
+  listContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px',
+    flex: 1,
+  },
+  row: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '8px 0',
+    borderBottom: '1px solid #eee',
+  },
+  name: {
+    fontSize: '14px',
+    color: '#000',
   },
   checkbox: {
-    marginLeft: '182px',
+    width: '18px',
+    height: '18px',
   },
-  casilla6: {
-    borderRadius: 10,
-    marginBottom: '25px',
-    marginLeft: '60px',
-    height: '40px',
-    width: '130px',
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '10px',
+    marginTop: 'auto',
   },
-  casilla7: {
-    borderRadius: 10,
-    marginBottom: '25px',
-    marginLeft: '10px',
+  cancelButton: {
+    flex: 1,
+    padding: '10px',
+    borderRadius: '5px',
+    border: '1px solid #ddd',
+    backgroundColor: 'white',
+    cursor: 'pointer',
+  },
+  guardarButton: {
+    flex: 1,
+    padding: '10px',
+    borderRadius: '5px',
+    border: 'none',
     backgroundColor: '#833D8E',
-    height: '40px',
-    width: '130px',
-    border: '#833D8E',
-  },
+    color: 'white',
+    cursor: 'pointer',
+  }
 });
 
 export default Asistencia;

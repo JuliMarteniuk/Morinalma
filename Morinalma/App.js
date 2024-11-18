@@ -21,8 +21,8 @@ import RootLayout from './app/_layout';
 //import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
-//import vistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
-//import Editar from './src/modules/preceptor/componentes/editar';
+//import VistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
+import Editar from './src/modules/preceptor/componentes/Editar';
 //import Administracion from './src/modules/administrador/componentes/administracion';
 
 //import {AppBar} from "./src/components/appBar";
@@ -36,7 +36,7 @@ import RootLayout from './app/_layout';
 //import HomeProfesor from './src/modules/profesor/componentes/HomeProfesor';
 //import VistaCursoProfesor from './src/modules/profesor/componentes/VistaCursoProfesor';
 //import NuevaEvaluacion from './src/modules/profesor/componentes/NuevaEvaluacion';
-import CrearCuenta from './src/components/CrearCuenta';
+//import CrearCuenta from './src/components/CrearCuenta';
 
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
@@ -61,7 +61,7 @@ export default function App() {
     //<Curso></Curso>
     //<InicioSesion></InicioSesion> 
     //<Main></Main> 
-    <CrearCuenta></CrearCuenta>
+    //<CrearCuenta></CrearCuenta>
     //<HomePreceptor></HomePreceptor>
     //<VistaCursoProfesor></VistaCursoProfesor>
     //<Filtros></Filtros>
@@ -76,7 +76,7 @@ export default function App() {
     //<NuevaEvaluacion></NuevaEvaluacion>
 
     //<VistaCursoPreceptor></VistaCursoPreceptor>
-    //<Editar></Editar>
+    <Editar></Editar>
 
 
     //<vistaCursoPreceptor></vistaCursoPreceptor>

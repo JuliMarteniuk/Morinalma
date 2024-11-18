@@ -1,15 +1,20 @@
 import React from "react";
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 const HomePreceptor = () => {
   const cursos = [
     {
-      grado: "4°3",
-      turno: "Turno Vespertino"
+      grado: "1°3",
+      turno: "Turno Mañana"
     },
     {
       grado: "5°3",
       turno: "Turno Vespertino"
+    },
+    {
+      grado: "3°3",
+      turno: "Turno Tarde"
     },
     {
       grado: "6°3",
@@ -18,72 +23,120 @@ const HomePreceptor = () => {
   ];
 
   return (
-    <View style={styles.homePreceptor}>
-      <View style={styles.formulario}>
-        <View style={styles.casilleros}>
-          {cursos.map((curso, index) => (
-            <CursoCard
-              key={index}
-              grado={curso.grado}
-              turno={curso.turno}
-            />
-          ))}
+    <View style={styles.container}>
+      <View style={styles.navbar}>
+        <View style={styles.searchContainer}>
+          <Ionicons name="search-outline" size={20} color="#666" />
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Buscar"
+            placeholderTextColor="#666"
+          />
         </View>
+        <TouchableOpacity>
+          <Ionicons name="menu" size={20} color="#666" />
+        </TouchableOpacity>
       </View>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        {cursos.map((curso, index) => (
+          <TouchableOpacity key={index} style={styles.card}>
+            <View style={styles.purpleBorder} />
+            <View style={styles.cardContent}>
+              <View style={styles.textContainer}>
+                <Text style={styles.title}>
+                  {`${curso.grado} - ${curso.turno}`}
+                </Text>
+                <Text style={styles.subtitle}>
+                  Ver información del curso
+                </Text>
+              </View>
+              <Text style={styles.arrow}>›</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
     </View>
   );
 };
 
-const CursoCard = ({ grado, turno }) => (
-  <View style={styles.curso}>
-    <Text style={styles.cursoTitle}>{grado} - {turno}</Text>
-    <Text style={styles.cursoSubtitle}>Ver información del curso</Text>
-  </View>
-);
-
 const styles = StyleSheet.create({
-  curso: {
-    display: 'flex',
-    borderRadius: 20,
-    width: 374,
-    height: 96,
-    backgroundColor: '#f6edfa',
-    color: '#000000',
-    borderWidth: 2,
-    borderColor: '#833D8E',
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+  },
+  navbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    margin: 20,
     padding: 10,
+    backgroundColor: '#fff',
   },
-  cursoTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 10,
+    marginRight: 10,
+    flex: 1,
   },
-  cursoSubtitle: {
+  searchInput: {
+    marginLeft: 10,
+    flex: 1,
+  },
+  scrollContainer: {
+    paddingVertical: 10,
+  },
+  card: {
+    width: '100%',
+    height: 80,
+    backgroundColor: '#f6edfa',
+    borderRadius: 12,
+    marginBottom: 15,
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  cardContent: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderWidth: 1,
+    borderColor: '#833D8E',
+    borderRadius: 12,
+    borderLeftWidth: 0,
+  },
+  textContainer: {
+    flex: 1,
+    marginLeft: 8,
+  },
+  title: {
+    fontSize: 16,
+    color: '#000',
+    marginBottom: 4,
+    fontWeight: '500',
+  },
+  subtitle: {
     fontSize: 14,
     color: '#666',
   },
-  formulario: {
-    padding: 20,
-    margin: 20,
-    borderRadius: 15,
-    height: 446,
-    width: 397,
+  arrow: {
+    fontSize: 24,
+    color: '#833D8E',
+    marginLeft: 10,
   },
-  homePreceptor: {
-    padding: 20,
-    margin: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 400,
-    borderRadius: 10,
-  },
-  casilleros: {
-    marginLeft: 15,
-    marginTop: 40,
-  },
+  purpleBorder: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: 12,
+    backgroundColor: '#833D8E',
+    borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
+  }
 });
 
 export default HomePreceptor;

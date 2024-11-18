@@ -1,167 +1,175 @@
 import React, { useState } from "react";
 import { StyleSheet } from 'react-native';
 
-const Editar = ({ onAdd }) => {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
-    curso: "",
-    turno: ""
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAdd(formData);
-    setFormData({
-      nombre: "",
-      apellido: "",
-      curso: "",
-      turno: ""
-    });
-  };
-
-  const handleCancel = () => {
-    setFormData({
-      nombre: "",
-      apellido: "",
-      curso: "",
-      turno: ""
-    });
-  };
-
+const Editar = () => {
   return (
-    <form onSubmit={handleSubmit} style={styles.preceptor}>
-      <div style={styles.formulario}>
-        <div style={styles.casilleros}>
-          <InputField
-            name="nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-            placeholder="Nombre"
-          />
-          <InputField
-            name="apellido"
-            value={formData.apellido}
-            onChange={handleChange}
-            placeholder="Apellido"
-          />
-          <SelectField
-            label="Curso"
-            name="curso"
-            value={formData.curso}
-            onChange={handleChange}
-            options={getCursosOptions()}
-          />
-          <SelectField
-            label="Turno"
-            name="turno"
-            value={formData.turno}
-            onChange={handleChange}
-            options={getTurnosOptions()}
-          />
-          <div style={styles.caja}>
-            <button type="button" style={styles.casilla} onClick={handleCancel}>
-              Cancelar
-            </button>
-            <button type="submit" style={styles.casilla}>
-              Guardar
-            </button>
+    <div style={styles.pageContainer}>
+      {/* Header */}
+      <div style={styles.header}>
+        <div style={styles.headerLeft}>
+          <button style={styles.backButton}>←</button>
+          <div style={styles.purpleBar}></div>
+          <span style={styles.headerTitle}>1°3 - Alumnos</span>
+        </div>
+        <button style={styles.menuButton}>≡</button>
+      </div>
+
+      <div style={styles.contentWrapper}>
+        <h2 style={styles.title}>Editar Alumno</h2>
+        
+        <div style={styles.cardAndButtons}>
+          <div style={styles.card}>
+            <h3 style={styles.subtitle}>Alumnos</h3>
+            
+            <div style={styles.alumnosList}>
+              {Array.from({ length: 11 }, (_, i) => (
+                <div key={i} style={styles.alumnoRow}>
+                  <span style={styles.alumnoName}>Julio Menteniuk</span>
+                  <div style={styles.editIconWrapper}>
+                    <button style={styles.editButton}>✎</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={styles.buttonContainer}>
+            <button style={styles.cancelButton}>Cancelar</button>
+            <button style={styles.guardarButton}>Guardar</button>
           </div>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
-
-const InputField = ({ name, value, onChange, placeholder }) => (
-  <div>
-    <input
-      style={styles.casilla}
-      type="text"
-      name={name}
-      value={value}
-      onChange={onChange}
-      required
-      placeholder={placeholder}
-    />
-  </div>
-);
-
-const SelectField = ({ label, name, value, onChange, options }) => (
-  <div>
-    <label htmlFor={name}>{label}</label>
-    <select
-      name={name}
-      id={name}
-      value={value}
-      onChange={onChange}
-    >
-      <option value="">Elija el {label.toLowerCase()}</option>
-      {options.map(({ value, label }) => (
-        <option key={value} value={value}>
-          {label}
-        </option>
-      ))}
-    </select>
-  </div>
-);
-
-const getCursosOptions = () => {
-  const años = [1, 2, 3, 4, 5, 6];
-  const divisiones = años.map(año => 
-    año <= 3 ? 6 : año <= 4 ? 5 : año <= 5 ? 4 : 4
-  );
-  
-  return años.flatMap((año, i) => 
-    Array.from({ length: divisiones[i] }, (_, j) => ({
-      value: `u${año}${j + 1}`,
-      label: `${año}°${j + 1}`
-    }))
-  );
-};
-
-const getTurnosOptions = () => [
-  { value: 't1', label: 'Turno Mañana' },
-  { value: 't2', label: 'Turno Tarde' },
-  { value: 't3', label: 'Turno Vespertino' }
-];
 
 const styles = StyleSheet.create({
-  preceptor: {
+  pageContainer: {
+    height: '100vh',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px 20px',
+    backgroundColor: '#F8F0FA',
+    borderBottom: '1px solid #E0E0E0',
+  },
+  headerLeft: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  },
+  purpleBar: {
+    width: '4px',
+    height: '20px',
+    backgroundColor: '#833D8E',
+    borderRadius: '2px',
+  },
+  backButton: {
+    border: 'none',
+    background: 'none',
+    fontSize: '20px',
+    cursor: 'pointer',
+  },
+  menuButton: {
+    border: 'none',
+    background: 'none',
+    fontSize: '24px',
+    cursor: 'pointer',
+  },
+  headerTitle: {
+    fontSize: '16px',
+  },
+  mainContent: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    padding: '40px 20px',
+    backgroundColor: '#f5f5f5',
+  },
+  title: {
+    color: '#833D8E',
+    fontSize: '24px',
+    margin: 0,
+  },
+  cardContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+  },
+  card: {
+    border: '1px solid #ddd',
+    borderRadius: '8px',
     padding: '20px',
-    margin: '20px',
+  },
+  subtitle: {
+    fontSize: '18px',
+    marginBottom: '20px',
+    textAlign: 'center',
+  },
+  alumnosList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+  },
+  alumnoRow: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '8px 0',
+    borderBottom: '1px solid #eee',
+  },
+  alumnoName: {
+    fontSize: '16px',
+  },
+  editButton: {
+    border: 'none',
+    background: 'none',
+    fontSize: '18px',
+    color: '#833D8E',
+    cursor: 'pointer',
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '20px',
+    marginTop: '20px',
+  },
+  cancelButton: {
+    flex: 1,
+    padding: '12px',
+    borderRadius: '5px',
+    border: '1px solid #ddd',
+    backgroundColor: 'white',
+    cursor: 'pointer',
+    fontSize: '16px',
+  },
+  guardarButton: {
+    flex: 1,
+    padding: '12px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#833D8E',
+    color: 'white',
+    cursor: 'pointer',
+    fontSize: '16px',
+  },
+  editIconWrapper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: '450px',
-    borderRadius: 10,
-  },
-  formulario: {
-    border: '2px solid #833D8E',
-    padding: '20px',
-    margin: '20px',
-    borderRadius: 15,
-    height: '446px',
-    width: '350px',
-  },
-  casilleros: {
-    marginLeft: '25px',
-    marginTop: '10px',
-  },
-  casilla: {
-    borderRadius: 10,
-    marginBottom: '25px',
+    width: '30px',
     height: '30px',
-    width: '289px',
-  }
+    borderRadius: '50%',
+    backgroundColor: '#833D8E',
+    cursor: 'pointer',
+  },
 });
 
 export default Editar;
