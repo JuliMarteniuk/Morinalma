@@ -22,8 +22,9 @@ import RootLayout from './app/_layout';
 //import MenuDesplegable from './src/modules/profesor/componentes/MenuDesplegable';
 //import NuevaClase from './src/modules/profesor/componentes/NuevaClase';
 //import VistaCursoPreceptor from './src/modules/preceptor/componentes/VistaCursoPreceptor';
-import Editar from './src/modules/preceptor/componentes/Editar';
+//import Editar from './src/modules/preceptor/componentes/Editar';
 //import Administracion from './src/modules/administrador/componentes/administracion';
+import Registro from './src/modules/alumno/Registro';
 
 //import {AppBar} from "./src/components/appBar";
 //import ProfesorAdd from './src/modules/profesor/componentes/profesorAdd';
@@ -68,15 +69,16 @@ export default function App() {
     //<ProfesorAdd></ProfesorAdd>
     //<HomeProfesor></HomeProfesor>
     //<RootLayout></RootLayout>
-    //<MenuDesplegable></MenuDesplegable>
+  //<MenuDesplegable></MenuDesplegable>
     //<NuevaClase></NuevaClase>
     //<PreceptorAdd></PreceptorAdd>
     //<Administracion></Administracion>
     //<MateriaCard></MateriaCard>
     //<NuevaEvaluacion></NuevaEvaluacion>
+    <Registro></Registro>
 
     //<VistaCursoPreceptor></VistaCursoPreceptor>
-    <Editar></Editar>
+    //<Editar></Editar>
 
 
     //<vistaCursoPreceptor></vistaCursoPreceptor>
